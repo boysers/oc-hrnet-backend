@@ -31,4 +31,8 @@ export class Employee {
 
 	@Column()
 	zipCode: string
+
+	constructor(partial: Partial<Employee>) {
+		Object.assign(this, partial)
+	}
 }

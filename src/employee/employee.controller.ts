@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Body } from '@nestjs/common'
 import { EmployeeService } from './employee.service'
+import { CreateEmployeeDto } from './create-employee.dto'
 
 @Controller('employee')
 export class EmployeeController {
@@ -11,20 +12,7 @@ export class EmployeeController {
 	}
 
 	@Post()
-	create(
-		@Body('employee')
-		employee: {
-			firstName: string
-			lastName: string
-			dateOfBirth: string
-			startDate: string
-			department: string
-			street: string
-			city: string
-			state: string
-			zipCode: string
-		},
-	) {
-		return this.employeeService.create(employee)
+	create(@Body() createEmployeeDto: CreateEmployeeDto) {
+		return this.employeeService.create(createEmployeeDto)
 	}
 }
