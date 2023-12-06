@@ -13,10 +13,9 @@ async function bootstrap() {
 	})
 
 	const config = new DocumentBuilder()
-		.setTitle('Employees')
-		.setDescription('The employee API')
+		.setTitle('HRnet API')
+		.setDescription('The HRnet API')
 		.setVersion('1.0')
-		.addTag('employees')
 		.build()
 	const document = SwaggerModule.createDocument(app, config)
 	SwaggerModule.setup('api', app, document)

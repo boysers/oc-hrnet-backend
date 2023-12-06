@@ -16,4 +16,8 @@ export class EmployeeService {
 		const employee = new Employee(createEmployeeDto)
 		return this.employeeRepository.save(employee)
 	}
+
+	delete(id: number) {
+		return this.employeeRepository.delete(id)
+	}
 }
